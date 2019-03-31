@@ -2,6 +2,10 @@
     "name": "@github-api/rest",
     "version": "1.0.0",
     "description": "GitHub REST API client for Node.js",
+    "scripts": {
+        "start": "main.js"
+    },
+    "main": "main.js",
     "dependencies": {
         "@octokit/rest": "16.22.0",
         "request": "^2.88.0"
