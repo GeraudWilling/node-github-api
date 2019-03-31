@@ -14,14 +14,22 @@ spec:
       jenkinsPipelineStrategy:
         jenkinsfilePath: jenkinsfile
       type: JenkinsPipeline
-    triggers:
+    triggers: #Trigger for github
     - github:
-        secretReference:
+        secretReference: 
           name: "smashinggithubsecret"
       type: GitHub
     env:
-      - name: GITHUB_PASSWORD
+      - name: GITHUB_PASSWORD #My Github password
         valueFrom:
           secretKeyRef:
             key: SECRET_TOKEN
             name: secret-token-for-github-pull
+      - name: GIT_TOKEN #My github api token
+        valueFrom:
+          secretKeyRef:
+            key: SECRET_TOKEN
+            name: secret-token-github-api
+      - name: GUI_URL #The url to the smashing front-ent (http://smashing-dev OR http://smashing-stage)
+        value: 
+         
