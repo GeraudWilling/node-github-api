@@ -17,7 +17,7 @@ spec:
     triggers: #Trigger for github
     - github:
         secretReference: 
-          name: "smashinggithubsecret"
+          name: "smashinggithubsecretbackend"
       type: GitHub
     env:
       - name: GITHUB_PASSWORD #My Github password
