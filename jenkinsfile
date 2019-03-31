@@ -95,6 +95,15 @@ pipeline {
       }
     }
     stage('Create STAGE') {
+      steps {
+        script {
+          openshift.withCluster() {
+            openshift.withProject() {
+              echo "Creating stage in ${openshift.project()}"
+            }
+          }
+        }
+      }
       // when {
       //   expression {
       //     openshift.withCluster() {
